@@ -15,13 +15,18 @@ open FSharp.Control.Tasks
 
 module App =
 
+    type ApiResult = 
+        { Code : int
+          Data : obj }
+
     let pong = "pong"
         // {| Code = 200; Data = "pong" |}
 
     let app : HttpHandler = 
         choose [
-            GET >=> route "/api/healths/ping" >=> json pong
-            GET >=> route "/api/healths/hello" >=> json "world"
+            GET >=> route "/api/healths/ping" >=> text pong
+            GET >=> route "/api/healths/hello" >=> json { Code = 200; Data = "world" }
+            GET >=> json "not found"
         ]
 
     [<FunctionName "Ping">]
