@@ -1,16 +1,12 @@
 namespace Darting
 
-open System
 open System.Threading.Tasks
-open Microsoft.AspNetCore.Mvc
 open Microsoft.Azure.WebJobs
-open Microsoft.Azure.WebJobs.Hosting
 open Microsoft.AspNetCore.Http
-open Microsoft.Azure.WebJobs.Host
 open Microsoft.Azure.WebJobs.Extensions.Http
 open Microsoft.Extensions.Logging
 open Giraffe
-open FSharp.Control.Tasks
+open FSharp.Control.Tasks.V2
 
 
 module App =
@@ -31,7 +27,7 @@ module App =
 
     [<FunctionName "Ping">]
     let run ([<HttpTrigger (AuthorizationLevel.Anonymous, Route = "{*any}")>] request : HttpRequest
-            //  , context : ExecutionContext
+             , context : ExecutionContext
              , log : ILogger) = 
         log.LogInformation "processed a request"
         let func = Some >> Task.FromResult

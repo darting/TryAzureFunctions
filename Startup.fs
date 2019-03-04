@@ -1,4 +1,4 @@
-namespace Darting
+namespace Startup
 
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Azure.WebJobs
