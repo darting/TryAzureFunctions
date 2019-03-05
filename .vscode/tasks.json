@@ -2,12 +2,18 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "options": {
+        "cwd": "${workspaceFolder}/Server"
+      },
       "label": "clean",
       "command": "dotnet clean",
       "type": "shell",
       "problemMatcher": "$msCompile"
     },
     {
+      "options": {
+        "cwd": "${workspaceFolder}/Server"
+      },
       "label": "build",
       "command": "dotnet build",
       "type": "shell",
@@ -19,12 +25,18 @@
       "problemMatcher": "$msCompile"
     },
     {
+      "options": {
+        "cwd": "${workspaceFolder}/Server"
+      },
       "label": "clean release",
       "command": "dotnet clean --configuration Release",
       "type": "shell",
       "problemMatcher": "$msCompile"
     },
     {
+      "options": {
+        "cwd": "${workspaceFolder}/Server"
+      },
       "label": "publish",
       "command": "dotnet publish --configuration Release",
       "type": "shell",
@@ -35,7 +47,7 @@
       "type": "func",
       "dependsOn": "build",
       "options": {
-        "cwd": "${workspaceFolder}/bin/Debug/netcoreapp2.1"
+        "cwd": "${workspaceFolder}/Server/bin/Debug/netstandard2.0"
       },
       "command": "host start",
       "isBackground": true,

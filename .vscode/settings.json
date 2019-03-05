@@ -2,7 +2,7 @@
   "azureFunctions.projectRuntime": "~2",
   "azureFunctions.projectLanguage": "C#",
   "azureFunctions.templateFilter": "Verified",
-  "azureFunctions.deploySubpath": "bin/Release/netcoreapp2.2/publish",
+  "azureFunctions.deploySubpath": "Server/bin/Release/netstandard2.0/publish",
   "azureFunctions.preDeployTask": "publish",
   "debug.internalConsoleOptions": "neverOpen"
 }
